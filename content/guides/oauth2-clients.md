@@ -76,7 +76,7 @@ kubectl apply -f backend-app-client.yaml
 ```
 
 !!! warning
-    Replace the example secret value with a strong, randomly generated string. Never commit plaintext secrets to version control.
+    Replace the example secret value with a strong, randomly generated string. Never commit unencrypted secrets to version control.
 
 ## Trusted Peers
 

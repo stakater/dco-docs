@@ -17,6 +17,6 @@ Dex Config Operator (DCO) is a Kubernetes operator that manages [Dex](https://de
 |---|---|
 | [Overview](overview/key-features.md) | Key features and architecture |
 | [Getting Started](getting-started/) | Installation and first configuration |
-| [Guides](guides/) | Step-by-step walkthroughs for common tasks |
+| [Guides](guides/) | Step-by-step tutorials for common tasks |
 | [Reference](reference/) | CRD specifications and API details |
 | [Integrations](integrations/) | Using DCO with external identity providers and storage backends |

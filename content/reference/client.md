@@ -7,7 +7,7 @@
 | **API Group** | `auth.stakater.com` |
 | **API Version** | `v1alpha1` |
 | **Kind** | `Client` |
-| **Scope** | Namespaced |
+| **Scope** | `Namespaced` |
 
 ---
 

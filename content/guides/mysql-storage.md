@@ -42,7 +42,7 @@ kubectl apply -f mysql-credentials.yaml
 ```
 
 !!! warning
-    Replace the example password with a strong, unique value. Never commit `plaintext` credentials to version control.
+    Replace the example password with a strong, unique value. Never commit unencrypted credentials to version control.
 
 ## Step 2: Create the DexConfig Resource
 

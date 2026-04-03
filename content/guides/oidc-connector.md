@@ -1,6 +1,6 @@
 # Configuring an OIDC Connector
 
-This guide walks through setting up an OpenID Connect (OIDC) connector with the Dex Config Operator. OIDC is the most common connector type and works with providers such as Keycloak, Okta, Auth0, and any standards-compliant identity provider.
+This guide walks through setting up an OpenID Connect (OIDC) connector with the Dex Config Operator. OIDC is the most common connector type and works with providers such as Keycloak, `Okta`, Auth0, and any standards-compliant identity provider.
 
 ## Overview
 

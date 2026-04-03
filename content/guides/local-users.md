@@ -24,7 +24,7 @@ python3 -c 'import bcrypt; print(bcrypt.hashpw(b"your-password", bcrypt.gensalt(
 ```
 
 !!! warning
-    Never store `plaintext` passwords in your manifests or version control. Always use the `bcrypt` hash.
+    Never store unencrypted passwords in your manifests or version control. Always use the `bcrypt` hash.
 
 ## Credential Secret Formats
 

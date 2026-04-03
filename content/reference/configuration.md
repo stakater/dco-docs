@@ -6,7 +6,7 @@ This page documents every tuneable for the Dex Config Operator -- command-line f
 
 The operator binary accepts the following flags. Each flag can also be set through its corresponding environment variable where noted.
 
-| Flag | Default | Env Variable | Description |
+| Flag | Default | `Env` Variable | Description |
 |---|---|---|---|
 | `--dex-namespace` | `dex` | `DEX_NAMESPACE` | Namespace where the Dex Deployment lives. |
 | `--dex-deployment-name` | `dex` | `DEX_DEPLOYMENT` | Name of the Dex Deployment resource. |
@@ -16,8 +16,8 @@ The operator binary accepts the following flags. Each flag can also be set throu
 | `--leader-elect` | `false` | -- | Enable leader election so only one replica reconciles at a time. Required for high-availability deployments. |
 | `--health-probe-bind-address` | `:8081` | -- | Address the health-probe endpoint binds to (`/healthz` and `/readyz`). |
 | `--metrics-bind-address` | `0` | -- | Address the Prometheus metrics endpoint binds to. `0` disables metrics. |
-| `--metrics-secure` | `true` | -- | Serve the metrics endpoint over HTTPS instead of plain HTTP. |
-| `--enable-http2` | `false` | -- | Enable HTTP/2 on the webhook and metrics servers. Disabled by default to mitigate HTTP/2-specific vulnerabilities. |
+| `--metrics-secure` | `true` | -- | Serve the metrics endpoint over https instead of plain http. |
+| `--enable-http2` | `false` | -- | Enable http/2 on the webhook and metrics servers. Disabled by default to mitigate http/2-specific vulnerabilities. |
 
 ## Environment Variables
 
@@ -45,14 +45,14 @@ When deploying through the Stakater Helm chart, the following values map to the 
 | Value | Default | Description |
 |---|---|---|
 | `image.repository` | `ghcr.io/stakater/dex-config-operator` | Container image repository. |
-| `image.tag` | *(chart appVersion)* | Container image tag. Defaults to the version bundled with the chart. |
+| `image.tag` | *(chart `appVersion`)* | Container image tag. Defaults to the version bundled with the chart. |
 | `resources` | `{}` | CPU and memory requests/limits for the operator pod. |
 | `env.dexConfigSecret` | `dex-config` | Maps to `DEX_CONFIG_SECRET`. |
 | `env.dexDeployment` | `dex` | Maps to `DEX_DEPLOYMENT`. |
 | `env.dexNamespace` | `dex` | Maps to `DEX_NAMESPACE`. |
 | `env.secretChangeAction` | `PatchDeployment` | Maps to `SECRET_CHANGE_ACTION`. |
 
-### Example values.yaml
+### Example `values.yaml`
 
 ```yaml
 image:
