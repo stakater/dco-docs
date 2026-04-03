@@ -28,7 +28,7 @@ kubectl apply -f oidc-connector-credentials.yaml
 ```
 
 !!! warning
-    Replace the example values with real credentials. Never commit plaintext secrets to version control.
+    Replace the example values with real credentials. Never commit secrets in plain text to version control.
 
 ## Step 2: Create Environment-Specific Connectors
 

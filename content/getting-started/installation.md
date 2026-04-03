@@ -31,7 +31,7 @@ Choose one of the following methods.
     cd dex-config-operator
     ```
 
-2. Install the chart with default values:
+1. Install the chart with default values:
 
     ```bash
     helm install dex-config-operator charts/dex-config-operator/
@@ -43,7 +43,7 @@ Choose one of the following methods.
     helm install dex-config-operator charts/dex-config-operator/ -f values-override.yaml
     ```
 
-3. Verify the deployment:
+1. Verify the deployment:
 
     ```bash
     kubectl get pods -l app.kubernetes.io/name=dex-config-operator
@@ -57,13 +57,13 @@ Choose one of the following methods.
     make docker-build docker-push IMG=<registry>/dex-config-operator:tag
     ```
 
-2. Deploy the operator:
+1. Deploy the operator:
 
     ```bash
     make deploy IMG=<registry>/dex-config-operator:tag
     ```
 
-3. Verify the deployment:
+1. Verify the deployment:
 
     ```bash
     kubectl get pods -n dex-config-operator-system
@@ -77,7 +77,7 @@ Choose one of the following methods.
     kubectl apply -f dist/install.yaml
     ```
 
-2. Verify the deployment:
+1. Verify the deployment:
 
     ```bash
     kubectl get pods -n dex-config-operator-system

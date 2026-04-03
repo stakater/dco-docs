@@ -7,7 +7,7 @@
 | **API Group** | `auth.stakater.com` |
 | **API Version** | `v1alpha1` |
 | **Kind** | `Connector` |
-| **Scope** | Namespaced |
+| **Scope** | `Namespaced` |
 
 ---
 
@@ -15,7 +15,7 @@
 
 | Field | Type | Required | Default | Validation | Description |
 |---|---|---|---|---|---|
-| `type` | `string` | Yes | - | Enum: `oidc`, `google`, `saml`, `ldap`, `github`, `gitlab`, `bitbucket`, `microsoft` | The type of identity provider connector. |
+| `type` | `string` | Yes | - | `Enum`: `oidc`, `google`, `saml`, `ldap`, `github`, `gitlab`, `bitbucket`, `microsoft` | The type of identity provider connector. |
 | `id` | `string` | Yes | - | Pattern: `^[a-z0-9]([-a-z0-9]*[a-z0-9])?$` | A unique identifier for this connector. Must be a DNS-compatible lowercase string. |
 | `name` | `string` | Yes | - | - | A human-readable display name shown on the Dex login page. |
 | `configSecretRef` | `object` | Yes | - | - | Reference to a Secret containing the connector configuration. See [Config Secret Reference](#config-secret-reference). |
@@ -83,8 +83,8 @@ Each connector type requires specific fields in the Secret referenced by `config
 | `host` | Yes | LDAP server host and port (e.g., `ldap.example.com:636`). |
 | `bindDN` | Yes | Distinguished name for the bind user. |
 | `bindPW` | Yes | Password for the bind user. |
-| `userSearch` | Yes | User search configuration (baseDN, filter, username, idAttr, emailAttr, nameAttr). |
-| `groupSearch` | No | Group search configuration (baseDN, filter, userMatchers, nameAttr). |
+| `userSearch` | Yes | User search configuration (baseDN, filter, username, `idAttr`, `emailAttr`, `nameAttr`). |
+| `groupSearch` | No | Group search configuration (baseDN, filter, `userMatchers`, `nameAttr`). |
 | `rootCA` | No | Path or content of the CA certificate for LDAPS connections. |
 | `insecureNoSSL` | No | If `true`, connects to the LDAP server without TLS. |
 | `insecureSkipVerify` | No | If `true`, skips TLS certificate verification. |
@@ -97,7 +97,7 @@ Each connector type requires specific fields in the Secret referenced by `config
 | `clientSecret` | Yes | GitHub OAuth App client secret. |
 | `redirectURI` | Yes | The redirect URI registered with GitHub. |
 | `orgs` | No | List of GitHub organizations to restrict access to. |
-| `hostName` | No | Hostname for GitHub Enterprise (omit for github.com). |
+| `hostName` | No | Hostname for GitHub Enterprise (omit for GitHub.com). |
 
 ### GitLab
 
@@ -106,7 +106,7 @@ Each connector type requires specific fields in the Secret referenced by `config
 | `clientID` | Yes | GitLab OAuth Application ID. |
 | `clientSecret` | Yes | GitLab OAuth Application secret. |
 | `redirectURI` | Yes | The redirect URI registered with GitLab. |
-| `baseURL` | No | Base URL for self-hosted GitLab instances (omit for gitlab.com). |
+| `baseURL` | No | Base URL for self-hosted GitLab instances (omit for GitLab.com). |
 | `groups` | No | List of GitLab groups to restrict access to. |
 
 ### Bitbucket

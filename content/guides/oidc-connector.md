@@ -1,13 +1,13 @@
 # Configuring an OIDC Connector
 
-This guide walks through setting up an OpenID Connect (OIDC) connector with the Dex Config Operator. OIDC is the most common connector type and works with providers such as Keycloak, Okta, Auth0, and any standards-compliant identity provider.
+This guide walks through setting up an OpenID Connect (OIDC) connector with the Dex Config Operator. OIDC is the most common connector type and works with providers such as Keycloak, `Okta`, Auth0, and any standards-compliant identity provider.
 
 ## Overview
 
 An OIDC connector requires two Kubernetes resources:
 
 1. A **Secret** containing the provider configuration as base64-encoded JSON.
-2. A **Connector** custom resource that references the secret.
+1. A **Connector** custom resource that references the secret.
 
 ## Step 1: Prepare the Configuration Secret
 

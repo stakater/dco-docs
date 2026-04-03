@@ -83,7 +83,7 @@ These settings ensure that even if the operator container is compromised, the bl
 
 CRDs in one namespace can reference Secrets in another namespace. This enables a central secret management pattern where a platform team maintains credentials in a dedicated namespace while application teams define CRDs in their own namespaces.
 
-```
+```text
 Namespace: team-a                    Namespace: central-secrets
 +-----------------+                  +---------------------------+
 | Connector       |  --- secretRef ---> | Secret                 |

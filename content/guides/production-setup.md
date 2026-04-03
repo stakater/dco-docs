@@ -12,7 +12,7 @@ This guide walks through a full end-to-end production deployment of Dex using th
 
 ## Architecture Overview
 
-```
+```text
 ┌─────────────┐     ┌──────────────┐     ┌────────────┐
 │  End Users   │────▶│  Dex (OIDC)  │────▶│  Keycloak  │
 └─────────────┘     └──────┬───────┘     └────────────┘
@@ -216,7 +216,7 @@ curl -s https://dex.example.com/.well-known/openid-configuration | jq .issuer
 
 ## Generating the Admin Password Hash
 
-Before applying the manifest, generate a bcrypt hash for the admin user and replace the placeholder in the Secret:
+Before applying the manifest, generate a `bcrypt` hash for the admin user and replace the placeholder in the Secret:
 
 ```bash
 # Using htpasswd
@@ -235,12 +235,12 @@ Before going to production, verify the following:
 - [ ] All `CHANGE-ME` placeholder values have been replaced with real credentials.
 - [ ] PostgreSQL SSL mode is set to `require` or `verify-full`.
 - [ ] The Keycloak client is configured as confidential with the correct redirect URI.
-- [ ] The admin user password is strong and the bcrypt hash uses a cost factor of at least 10.
+- [ ] The admin user password is strong and the `bcrypt` hash uses a cost factor of at least 10.
 - [ ] Secrets are managed through a secrets management tool (Sealed Secrets, External Secrets, or Vault).
 - [ ] TLS is terminated at the ingress in front of Dex.
 - [ ] RBAC restricts who can read Secrets in the `dex` namespace.
 - [ ] Token expiry values are appropriate for your security requirements.
-- [ ] The `internal-platform` client redirect URI uses HTTPS.
+- [ ] The `internal-platform` client redirect URI uses https.
 
 ## Next Steps
 

@@ -25,11 +25,11 @@ sequenceDiagram
 ```
 
 1. The user creates or updates a CRD (DexConfig, Connector, Client, or LocalUser).
-2. The responsible controller receives the reconcile event and validates the resource.
-3. The Config Manager collects every CRD across the cluster and fetches any referenced Secrets.
-4. The Dex Manager generates a complete `config.yaml` from the collected state.
-5. The generated configuration is written into a Kubernetes Secret.
-6. The Dex Deployment is restarted to pick up the new configuration.
+1. The responsible controller receives the reconcile event and validates the resource.
+1. The Config Manager collects every CRD across the cluster and fetches any referenced Secrets.
+1. The Dex Manager generates a complete `config.yaml` from the collected state.
+1. The generated configuration is written into a Kubernetes Secret.
+1. The Dex Deployment is restarted to pick up the new configuration.
 
 ## Secret References
 
@@ -84,7 +84,7 @@ Each CRD carries a `phase` field in its status that provides a quick summary of 
 | **Ready** | Reconciliation succeeded. The resource is valid, all Secrets are resolved, and the configuration has been synced to Dex. |
 | **Failed** | Reconciliation encountered an error. Inspect the status conditions and controller logs for details. The operator will retry after 1 minute. |
 
-```
+```text
 Pending ──► Ready
    │
    └──► Failed

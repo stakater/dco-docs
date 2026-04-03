@@ -1,6 +1,6 @@
 # Quick Start
 
-This walkthrough takes you from a fresh operator deployment to a fully rendered Dex configuration. By the end you will have a working DexConfig, a Google OAuth Connector, and a Client -- all managed declaratively.
+This guide takes you from a fresh operator deployment to a fully rendered Dex configuration. By the end you will have a working DexConfig, a Google OAuth Connector, and a Client -- all managed declaratively.
 
 ## Prerequisites
 

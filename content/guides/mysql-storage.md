@@ -42,7 +42,7 @@ kubectl apply -f mysql-credentials.yaml
 ```
 
 !!! warning
-    Replace the example password with a strong, unique value. Never commit plaintext credentials to version control.
+    Replace the example password with a strong, unique value. Never commit credentials in plain text to version control.
 
 ## Step 2: Create the DexConfig Resource
 
@@ -115,6 +115,6 @@ kubectl logs deployment/dex
 Look for log entries indicating a successful database connection. If Dex fails to start, verify that:
 
 1. The MySQL instance is reachable from within the cluster.
-2. The credentials in the Secret are correct.
-3. The target database exists and the user has the required permissions.
-4. The MySQL user has been granted appropriate privileges on the target database.
+1. The credentials in the Secret are correct.
+1. The target database exists and the user has the required permissions.
+1. The MySQL user has been granted appropriate privileges on the target database.

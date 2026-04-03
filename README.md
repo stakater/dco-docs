@@ -1,6 +1,6 @@
 # Dex Config Operator Documentation
 
-This repository contains the source for the documentation for [Dex Config Operator](https://www.stakater.com/dco). It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
+This repository contains the source for the documentation for Dex Config Operator. It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
 
 ## GitHub Actions
 
@@ -11,7 +11,7 @@ This repository has [GitHub action workflow](./.github/workflows/) which checks 
 1. Fork the repository
 1. Make a pull request
 1. Workflow will run QA checks, make sure all jobs have succeeded before requesting a review
-1. Pull requests builds are published for review on `https://stakater.github.io/dco-docs/<branch-name>/`
+1. Pull requests builds are published for review on `https://stakater.github.io/dco-docs/{branch-name}/`
 1. On merge of a pull request, the documentation is published on [`docs.stakater.com/dco/`](https://docs.stakater.com/dco/)
 
 > [!NOTE]

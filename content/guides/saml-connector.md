@@ -7,7 +7,7 @@ This guide explains how to set up a SAML 2.0 connector with the Dex Config Opera
 A SAML connector requires:
 
 1. A **Secret** containing the SAML configuration as base64-encoded JSON.
-2. A **Connector** custom resource that references the secret.
+1. A **Connector** custom resource that references the secret.
 
 ## Configuration Fields
 
