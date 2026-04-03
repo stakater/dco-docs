@@ -7,7 +7,7 @@
 | **API Group** | `auth.stakater.com` |
 | **API Version** | `v1alpha1` |
 | **Kind** | `LocalUser` |
-| **Scope** | Namespaced |
+| **Scope** | `Namespaced` |
 
 ---
 
@@ -37,7 +37,7 @@ The Secret referenced by `credentialSecretRef` must contain the following keys i
 |---|---|---|
 | `username` | Yes | The username for the local user. Used as the display name. |
 | `email` | Yes | The email address for the local user. Used as the login identifier. |
-| `password` | Yes | The user's password, hashed using bcrypt. Generate with: `htpasswd -nbBC 10 "" 'password' \| cut -d: -f2` |
+| `password` | Yes | The user's password, hashed using `bcrypt`. Generate with: `htpasswd -nbBC 10 "" 'password' \| cut -d: -f2` |
 | `groups` | No | Groups the user belongs to. Accepts either a JSON array (e.g., `["admin","developers"]`) or a comma-separated string (e.g., `admin,developers`). |
 
 !!! note

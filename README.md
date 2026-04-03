@@ -1,6 +1,6 @@
 # Dex Config Operator Documentation
 
-This repository contains the source for the documentation for [Dex Config Operator](https://www.stakater.com/dco). It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
+This repository contains the source for the documentation for Dex Config Operator. It is built using [MkDocs](https://github.com/mkdocs/mkdocs) which is based on Python. It is also versioned using [mike](https://github.com/jimporter/mike).
 
 ## GitHub Actions
 

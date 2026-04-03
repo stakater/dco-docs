@@ -5,9 +5,9 @@ The Dex Config Operator supports local user accounts through the `LocalUser` cus
 ## Prerequisites
 
 - The Dex Config Operator installed
-- A tool to generate bcrypt password hashes
+- A tool to generate `bcrypt` password hashes
 
-## Generating Bcrypt Password Hashes
+## Generating `bcrypt` Password Hashes
 
 `LocalUser` credentials require bcrypt-hashed passwords. Use one of the following methods to generate a hash.
 
@@ -24,7 +24,7 @@ python3 -c 'import bcrypt; print(bcrypt.hashpw(b"your-password", bcrypt.gensalt(
 ```
 
 !!! warning
-    Never store plaintext passwords in your manifests or version control. Always use the bcrypt hash.
+    Never store `plaintext` passwords in your manifests or version control. Always use the `bcrypt` hash.
 
 ## Credential Secret Formats
 
@@ -151,5 +151,5 @@ When the operator detects one or more `LocalUser` resources in the cluster, it a
 |---|---|
 | `username` | The login username. |
 | `email` | The user's email address, used as a unique identifier in Dex. |
-| `hash` | Bcrypt hash of the user's password. |
+| `hash` | `bcrypt` hash of the user's password. |
 | `groups` | Groups the user belongs to. JSON array (structured) or comma-separated string (flat). |

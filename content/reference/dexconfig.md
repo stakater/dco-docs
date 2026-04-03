@@ -7,7 +7,7 @@
 | **API Group** | `auth.stakater.com` |
 | **API Version** | `v1alpha1` |
 | **Kind** | `DexConfig` |
-| **Scope** | Namespaced (one per cluster) |
+| **Scope** | `Namespaced` (one per cluster) |
 
 ### Print Columns
 
@@ -23,9 +23,9 @@
 
 | Field | Type | Required | Default | Validation | Description |
 |---|---|---|---|---|---|
-| `issuer` | `string` | Yes | - | Pattern: `^https?://.*` | The issuer URL that Dex will use. Must be a valid HTTP or HTTPS URL. This is the public-facing URL of the Dex instance. |
+| `issuer` | `string` | Yes | - | Pattern: `^https?://.*` | The issuer URL that Dex will use. Must be a valid http or https URL. This is the public-facing URL of the Dex instance. |
 | `storage` | `object` | Yes | - | - | Configures the storage backend for Dex. See [Storage](#storage). |
-| `web` | `object` | No | - | - | Configures the HTTP/HTTPS web server. See [Web](#web). |
+| `web` | `object` | No | - | - | Configures the http/https web server. See [Web](#web). |
 | `grpc` | `object` | No | - | - | Configures the gRPC server. See [gRPC](#grpc). |
 | `telemetry` | `object` | No | - | - | Configures the telemetry/metrics endpoint. See [Telemetry](#telemetry). |
 | `oauth2` | `object` | No | - | - | Configures OAuth2 behavior. See [OAuth2](#oauth2). |
@@ -46,8 +46,8 @@
 
 | Field | Type | Required | Default | Validation | Description |
 |---|---|---|---|---|---|
-| `web.http` | `string` | No | - | - | The address to listen on for HTTP traffic (e.g., `0.0.0.0:5556`). |
-| `web.https` | `string` | No | - | - | The address to listen on for HTTPS traffic (e.g., `0.0.0.0:5554`). |
+| `web.http` | `string` | No | - | - | The address to listen on for http traffic (e.g., `0.0.0.0:5556`). |
+| `web.https` | `string` | No | - | - | The address to listen on for https traffic (e.g., `0.0.0.0:5554`). |
 | `web.tlsCert` | `string` | No | - | - | Path to the TLS certificate file. |
 | `web.tlsKey` | `string` | No | - | - | Path to the TLS private key file. |
 | `web.allowedOrigins` | `[]string` | No | - | - | List of allowed CORS origins for web requests. |
@@ -100,8 +100,8 @@
 
 | Field | Type | Required | Default | Validation | Description |
 |---|---|---|---|---|---|
-| `logger.level` | `string` | No | `info` | Enum: `debug`, `info`, `error` | The log level for Dex. |
-| `logger.format` | `string` | No | `text` | Enum: `text`, `json` | The log output format. |
+| `logger.level` | `string` | No | `info` | `Enum`: `debug`, `info`, `error` | The log level for Dex. |
+| `logger.format` | `string` | No | `text` | `Enum`: `text`, `json` | The log output format. |
 
 ### Frontend
 

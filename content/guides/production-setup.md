@@ -12,7 +12,7 @@ This guide walks through a full end-to-end production deployment of Dex using th
 
 ## Architecture Overview
 
-```
+```text
 ┌─────────────┐     ┌──────────────┐     ┌────────────┐
 │  End Users   │────▶│  Dex (OIDC)  │────▶│  Keycloak  │
 └─────────────┘     └──────┬───────┘     └────────────┘

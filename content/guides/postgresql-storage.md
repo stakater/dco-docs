@@ -118,6 +118,6 @@ kubectl logs deployment/dex
 Look for log entries indicating a successful database connection. If Dex fails to start, verify that:
 
 1. The PostgreSQL instance is reachable from within the cluster.
-2. The credentials in the Secret are correct.
-3. The target database exists and the user has the required permissions.
-4. The SSL mode matches the PostgreSQL server configuration.
+1. The credentials in the Secret are correct.
+1. The target database exists and the user has the required permissions.
+1. The SSL mode matches the PostgreSQL server configuration.

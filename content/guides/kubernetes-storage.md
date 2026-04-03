@@ -42,7 +42,7 @@ spec:
 | `spec.issuer` | The externally accessible URL of the Dex instance. This must match the URL clients use to reach Dex. |
 | `spec.storage.type` | Set to `kubernetes` to use in-cluster CRD-based storage. |
 | `spec.storage.config.inCluster` | Must be `true` when Dex is running inside the Kubernetes cluster. |
-| `spec.web.http` | The address and port Dex listens on for HTTP requests. |
+| `spec.web.http` | The address and port Dex listens on for http requests. |
 | `spec.oauth2.skipApprovalScreen` | When `true`, users are not prompted to approve application access after authentication. |
 | `spec.expiry.signingKeys` | The duration before signing keys are rotated (e.g., `"6h"`). |
 | `spec.expiry.idTokens` | The lifetime of issued ID tokens (e.g., `"24h"`). |

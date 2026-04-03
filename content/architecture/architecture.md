@@ -33,16 +33,16 @@ flowchart LR
 ```
 
 1. Users create and update **DexConfig**, **Connector**, **Client**, and **LocalUser** CRDs.
-2. The **Config Manager** collects all CRDs, resolves referenced Secrets, and generates a complete `config.yaml`.
-3. The generated configuration is written to a **Kubernetes Secret**.
-4. The operator triggers a **rolling restart** of the Dex Deployment so it picks up the new configuration.
-5. The **Secret Controller** watches any Secret that is referenced by a CRD. When a referenced Secret changes, it triggers re-reconciliation so the configuration stays in sync.
+1. The **Config Manager** collects all CRDs, resolves referenced Secrets, and generates a complete `config.yaml`.
+1. The generated configuration is written to a **Kubernetes Secret**.
+1. The operator triggers a **rolling restart** of the Dex Deployment so it picks up the new configuration.
+1. The **Secret Controller** watches any Secret that is referenced by a CRD. When a referenced Secret changes, it triggers re-reconciliation so the configuration stays in sync.
 
 ## Abstraction Layer
 
 The operator is designed around an interface-based abstraction that decouples CRD reconciliation from the specifics of Dex. This makes it possible to swap Dex for another OIDC provider without rewriting the controllers.
 
-```
+```text
 Controllers (reconcile CRDs)
     │
     ▼
@@ -80,17 +80,17 @@ The operator runs one controller per CRD type, plus a Secret controller:
 When any CRD or watched Secret changes, the operator runs the following pipeline:
 
 1. **Collect CRDs** -- List all Connector, Client, and LocalUser resources across the cluster. Filter out any resource with `enabled: false`.
-2. **Fetch Secrets** -- For each CRD that references a Secret (via `SecretReference` or `SecretKeyReference`), retrieve the Secret and extract the required key.
-3. **Build DexConfig struct** -- Assemble the full Dex configuration in memory, merging the singleton DexConfig with all collected connectors, clients, and local users.
-4. **Serialize to YAML** -- Marshal the DexConfig struct into a valid `config.yaml`.
-5. **Create or update Secret** -- Write the serialized YAML into a Kubernetes Secret. If the Secret already exists, update it in place.
-6. **Trigger rolling restart** -- Patch the Dex Deployment to initiate a rolling restart so the new configuration takes effect.
+1. **Fetch Secrets** -- For each CRD that references a Secret (via `SecretReference` or `SecretKeyReference`), retrieve the Secret and extract the required key.
+1. **Build DexConfig struct** -- Assemble the full Dex configuration in memory, merging the singleton DexConfig with all collected connectors, clients, and local users.
+1. **Serialize to YAML** -- Marshal the DexConfig struct into a valid `config.yaml`.
+1. **Create or update Secret** -- Write the serialized YAML into a Kubernetes Secret. If the Secret already exists, update it in place.
+1. **Trigger rolling restart** -- Patch the Dex Deployment to initiate a rolling restart so the new configuration takes effect.
 
 ## Deployment Restart Strategy
 
 The operator restarts the Dex Deployment by patching the pod template with a timestamp annotation:
 
-```
+```text
 dex-config-operator.stakater.com/restartedAt: "<current-timestamp>"
 ```
 

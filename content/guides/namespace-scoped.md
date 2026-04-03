@@ -6,7 +6,7 @@ By default, the Dex Config Operator watches all namespaces for `Client`, `Connec
 
 When no `--watch-namespace` flag is set, the operator reconciles resources across every namespace in the cluster. This is the simplest configuration and works well for single-team or single-tenant clusters.
 
-```
+```text
 ┌─────────────────────────────────────────────┐
 │  Cluster                                    │
 │                                             │

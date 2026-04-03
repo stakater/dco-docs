@@ -30,7 +30,7 @@ helm install dex-config-operator charts/dex-config-operator/
 
 ### Kustomize
 
-Suitable for environments that already use kustomize for manifest management. Deploy with a custom image reference:
+Suitable for environments that already use Kustomize for manifest management. Deploy with a custom image reference:
 
 ```bash
 make deploy IMG=<registry>/dex-config-operator:tag

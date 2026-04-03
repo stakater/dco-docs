@@ -95,7 +95,7 @@ spec:
 The `issuer` field at the top level of `spec` serves two purposes:
 
 1. It sets the OIDC issuer URL that appears in discovery documents and tokens.
-2. It provides the display name shown on the login screen.
+1. It provides the display name shown on the login screen.
 
 ```yaml
 spec:

@@ -5,8 +5,8 @@ This guide explains how to set up a Google OAuth connector with the Dex Config O
 ## Prerequisites
 
 1. A Google Cloud project with the **OAuth consent screen** configured.
-2. An OAuth 2.0 Client ID created under **APIs & Services > Credentials** in the Google Cloud Console.
-3. The authorized redirect URI set to your Dex callback URL (e.g., `https://dex.example.com/callback`).
+1. An OAuth 2.0 Client ID created under **APIs & Services > Credentials** in the Google Cloud Console.
+1. The authorized redirect URI set to your Dex callback URL (e.g., `https://dex.example.com/callback`).
 
 ## Configuration Secret
 
