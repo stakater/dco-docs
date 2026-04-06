@@ -65,9 +65,9 @@ kubectl get dexconfig dex-config
 
 ## When to Use Kubernetes Storage
 
-- **Development and testing** -- no external dependencies required.
-- **Small-scale deployments** -- suitable when the number of tokens and authentication sessions is low.
-- **Single-cluster setups** -- data is stored within the same cluster that runs Dex.
+- **Development and testing** — no external dependencies required.
+- **Small-scale deployments** — suitable when the number of tokens and authentication sessions is low.
+- **Single-cluster setups** — data is stored within the same cluster that runs Dex.
 
 !!! warning
     Kubernetes storage is not recommended for large-scale production deployments. For high-availability or multi-cluster environments, consider using [PostgreSQL](postgresql-storage.md) or [MySQL](mysql-storage.md) as the storage backend.

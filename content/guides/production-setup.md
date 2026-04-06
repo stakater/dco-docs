@@ -58,7 +58,7 @@ stringData:
     }
 ---
 # ============================================================
-# 4. DexConfig -- Global Configuration
+# 4. DexConfig — Global Configuration
 # ============================================================
 apiVersion: auth.stakater.com/v1alpha1
 kind: DexConfig

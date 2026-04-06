@@ -2,7 +2,7 @@
 
 This page explains how to remove Dex Config Operator and its associated resources from your cluster.
 
-## Step 1 -- Remove custom resources
+## Step 1 — Remove custom resources
 
 Delete all DCO custom resources before removing the operator. This ensures finalizers run and any managed resources are cleaned up properly.
 
@@ -20,7 +20,7 @@ kubectl get connectors -A
 kubectl get dexconfigs -A
 ```
 
-## Step 2 -- Remove the operator
+## Step 2 — Remove the operator
 
 Use the method that matches your original installation.
 
@@ -42,7 +42,7 @@ make undeploy
 kubectl delete -f dist/install.yaml
 ```
 
-## Step 3 -- Remove CRDs
+## Step 3 — Remove CRDs
 
 !!! warning
     Deleting CRDs removes **all** instances of those resources across the cluster. Make sure Step 1 is complete before proceeding.
@@ -59,7 +59,7 @@ kubectl delete crd connectors.auth.stakater.com
 kubectl delete crd clients.auth.stakater.com
 ```
 
-## Step 4 -- Clean up namespace (optional)
+## Step 4 — Clean up namespace (optional)
 
 If the operator namespace is no longer needed:
 

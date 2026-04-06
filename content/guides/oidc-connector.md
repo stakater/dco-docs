@@ -75,7 +75,7 @@ The `configSecretRef` field tells the operator which Secret holds the provider c
 
 | Sub-field | Required | Default    | Description                                              |
 |-----------|----------|------------|----------------------------------------------------------|
-| `name`    | Yes      | --         | The name of the Kubernetes Secret.                       |
+| `name`    | Yes      | —         | The name of the Kubernetes Secret.                       |
 | `key`     | No       | `"config"` | The key inside the Secret that contains the JSON config. |
 
 If your Secret uses a key other than `config`, specify it explicitly:

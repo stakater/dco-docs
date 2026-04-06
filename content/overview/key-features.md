@@ -2,7 +2,7 @@
 
 ## Security-first design
 
-All sensitive data -- client secrets, connector credentials, database passwords -- is stored in Kubernetes Secrets. CRD manifests contain only Secret references, so credentials never appear in plain text inside your resource definitions or Git repositories.
+All sensitive data — client secrets, connector credentials, database passwords — is stored in Kubernetes Secrets. CRD manifests contain only Secret references, so credentials never appear in plain text inside your resource definitions or Git repositories.
 
 ## Event-driven configuration
 
@@ -18,7 +18,7 @@ DCO monitors every Secret referenced by a DexConnector, DexClient, or storage co
 
 ## Comprehensive validation
 
-Each CRD reports detailed status conditions that surface configuration errors early. When a resource is invalid -- for example, a referenced Secret does not exist or a required field is missing -- the status condition provides a clear, actionable message.
+Each CRD reports detailed status conditions that surface configuration errors early. When a resource is invalid — for example, a referenced Secret does not exist or a required field is missing — the status condition provides a clear, actionable message.
 
 !!! note
     Status conditions follow the standard Kubernetes condition pattern (`type`, `status`, `reason`, `message`) and can be queried with `kubectl get` or consumed by monitoring tools.

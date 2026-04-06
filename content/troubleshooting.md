@@ -46,9 +46,9 @@ stateDiagram-v2
     Failed --> Ready : Issue resolved, reconcile succeeds
 ```
 
-- **Pending** -- The resource has been created but has not completed its first reconciliation.
-- **Ready** -- All conditions are `True`. The resource is part of the active Dex configuration.
-- **Failed** -- One or more conditions are not healthy. Check the conditions for details.
+- **Pending** — The resource has been created but has not completed its first reconciliation.
+- **Ready** — All conditions are `True`. The resource is part of the active Dex configuration.
+- **Failed** — One or more conditions are not healthy. Check the conditions for details.
 
 ## Troubleshooting Scenarios
 
@@ -182,7 +182,7 @@ kubectl get secret dex-config -n dex \
   -o jsonpath='{.data.config\.yaml}' | base64 -d
 
 # Compare with what Dex is actually using (if mounted as a file)
-kubectl exec -n dex deployment/dex -- cat /etc/dex/config.yaml
+kubectl exec -n dex deployment/dex — cat /etc/dex/config.yaml
 ```
 
 !!! tip

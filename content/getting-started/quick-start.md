@@ -1,6 +1,6 @@
 # Quick Start
 
-This guide takes you from a fresh operator deployment to a fully rendered Dex configuration. By the end you will have a working DexConfig, a Google OAuth Connector, and a Client -- all managed declaratively.
+This guide takes you from a fresh operator deployment to a fully rendered Dex configuration. By the end you will have a working DexConfig, a Google OAuth Connector, and a Client — all managed declaratively.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ This guide takes you from a fresh operator deployment to a fully rendered Dex co
 
 ## 1. Create a DexConfig resource
 
-The DexConfig resource defines the core Dex server settings -- issuer URL, storage backend, web listener, and OAuth2 behaviour.
+The DexConfig resource defines the core Dex server settings — issuer URL, storage backend, web listener, and OAuth2 behaviour.
 
 Create a file named `dex-config.yaml`:
 

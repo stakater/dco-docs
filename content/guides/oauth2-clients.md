@@ -1,6 +1,6 @@
 # Configuring OAuth2 Clients
 
-The Dex Config Operator manages OAuth2 clients through the `Client` custom resource. Clients fall into two categories -- public and confidential -- depending on whether the application can securely store a secret.
+The Dex Config Operator manages OAuth2 clients through the `Client` custom resource. Clients fall into two categories — public and confidential — depending on whether the application can securely store a secret.
 
 ## Public Clients
 

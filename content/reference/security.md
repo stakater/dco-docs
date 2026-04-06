@@ -4,7 +4,7 @@ The Dex Config Operator is designed around the principle that sensitive data mus
 
 ## Secrets-First Design
 
-All sensitive data -- client secrets, connector credentials, user passwords -- is stored exclusively in Kubernetes Secrets. CRDs contain only structural references that point to those Secrets. This means:
+All sensitive data — client secrets, connector credentials, user passwords — is stored exclusively in Kubernetes Secrets. CRDs contain only structural references that point to those Secrets. This means:
 
 - **CRDs are safe to store in Git.** They contain no embedded credentials.
 - **Kubernetes RBAC on Secrets controls who can read sensitive data.** Access to a CRD does not grant access to the underlying secret values.

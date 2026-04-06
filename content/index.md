@@ -6,10 +6,10 @@ Dex Config Operator (DCO) is a Kubernetes operator that manages [Dex](https://de
 
 ## Why DCO?
 
-- **Security-first** -- Sensitive data lives in Kubernetes Secrets, never in CRDs.
-- **Event-driven** -- Configuration regenerates automatically when CRDs or referenced Secrets change.
-- **Auto-restart** -- Dex deployments receive rolling restarts on every config update, with zero manual intervention.
-- **GitOps-friendly** -- CRDs are plain YAML, ready for version control and CI/CD pipelines.
+- **Security-first** — Sensitive data lives in Kubernetes Secrets, never in CRDs.
+- **Event-driven** — Configuration regenerates automatically when CRDs or referenced Secrets change.
+- **Auto-restart** — Dex deployments receive rolling restarts on every config update, with zero manual intervention.
+- **GitOps-friendly** — CRDs are plain YAML, ready for version control and CI/CD pipelines.
 
 ## Get started
 

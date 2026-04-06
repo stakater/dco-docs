@@ -99,7 +99,7 @@ When a resource is disabled:
 
 ## Singleton DexConfig
 
-The **DexConfig** CRD is a singleton -- only one instance is permitted per cluster. It defines the global Dex settings such as the issuer URL, storage backend, and web server configuration.
+The **DexConfig** CRD is a singleton — only one instance is permitted per cluster. It defines the global Dex settings such as the issuer URL, storage backend, and web server configuration.
 
 If a second DexConfig resource is created, the operator rejects it and sets the resource phase to **Failed** with a descriptive error message.
 

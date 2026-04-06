@@ -43,11 +43,11 @@ flowchart LR
 
 When any CRD or referenced Secret changes, the operator runs the following steps:
 
-1. **Collect resources** -- gather all Connector, Client, and LocalUser resources across the cluster, filtering out any with `enabled: false`.
-1. **Resolve secrets** -- for each resource that references a Secret, read the Secret and extract the required values.
-1. **Generate configuration** -- combine the DexConfig settings with all collected connectors, clients, and local users into a complete Dex `config.yaml`.
-1. **Update the config Secret** -- write the generated YAML into a Kubernetes Secret. If the Secret already exists, update it in place.
-1. **Restart Dex** -- trigger a rolling restart of the Dex Deployment so the new configuration takes effect with zero downtime.
+1. **Collect resources** — gather all Connector, Client, and LocalUser resources across the cluster, filtering out any with `enabled: false`.
+1. **Resolve secrets** — for each resource that references a Secret, read the Secret and extract the required values.
+1. **Generate configuration** — combine the DexConfig settings with all collected connectors, clients, and local users into a complete Dex `config.yaml`.
+1. **Update the config Secret** — write the generated YAML into a Kubernetes Secret. If the Secret already exists, update it in place.
+1. **Restart Dex** — trigger a rolling restart of the Dex Deployment so the new configuration takes effect with zero downtime.
 
 ## How Dex Is Restarted
 
