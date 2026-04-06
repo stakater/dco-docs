@@ -7,23 +7,7 @@ This guide takes you from a fresh operator deployment to a fully rendered Dex co
 - A running Kubernetes cluster with DCO installed (see [Installation](installation.md))
 - `kubectl` configured to communicate with the cluster
 
-## 1. Install CRDs
-
-If you have not already installed the Custom Resource Definitions:
-
-```bash
-make install
-```
-
-## 2. Deploy the operator
-
-Deploy using any method described in the [Installation](installation.md) guide. For example, with raw manifests:
-
-```bash
-kubectl apply -f dist/install.yaml
-```
-
-## 3. Create a DexConfig resource
+## 1. Create a DexConfig resource
 
 The DexConfig resource defines the core Dex server settings -- issuer URL, storage backend, web listener, and OAuth2 behaviour.
 
@@ -52,7 +36,7 @@ Apply it:
 kubectl apply -f dex-config.yaml
 ```
 
-## 4. Create a Connector
+## 2. Create a Connector
 
 Connectors link Dex to upstream identity providers. This example configures Google OAuth.
 
@@ -83,15 +67,12 @@ kind: Connector
 metadata:
   name: google-connector
 spec:
-  type: oidc
+  type: google
   id: google
   name: Google
-  config:
-    issuer: https://accounts.google.com
-    redirectURI: https://dex.example.com/callback
-  secretRef:
+  configSecretRef:
     name: google-connector-secret
-    namespace: default
+  enabled: true
 ```
 
 Apply it:
@@ -100,7 +81,7 @@ Apply it:
 kubectl apply -f google-connector.yaml
 ```
 
-## 5. Create a Client
+## 3. Create a Client
 
 Clients represent applications that authenticate through Dex. Save the following as `example-client.yaml`:
 
@@ -112,11 +93,13 @@ metadata:
 spec:
   id: example-app
   name: Example Application
-  secretRef:
-    name: example-app-secret
-    namespace: default
   redirectURIs:
     - https://app.example.com/callback
+  public: false
+  secretRef:
+    name: example-app-secret
+    key: secret
+  enabled: true
 ```
 
 Create the corresponding client secret:
@@ -128,7 +111,7 @@ metadata:
   name: example-app-secret
 type: Opaque
 stringData:
-  clientSecret: "example-app-secret-value"
+  secret: "example-app-secret-value"
 ```
 
 Apply both:
@@ -138,7 +121,7 @@ kubectl apply -f example-app-secret.yaml
 kubectl apply -f example-client.yaml
 ```
 
-## 6. Verify the generated configuration
+## 4. Verify the generated configuration
 
 DCO assembles all resources into a single Dex configuration Secret. Inspect it:
 
@@ -148,9 +131,9 @@ kubectl get secret dex -n dex -o jsonpath='{.data.config\.yaml}' | base64 -d
 
 The output should include your issuer, storage settings, the Google connector, and the example client.
 
-## 7. Check resource statuses
+## 5. Check resource statuses
 
-Confirm that each custom resource has been reconciled successfully:
+Confirm that each custom resource is healthy:
 
 ```bash
 kubectl get dexconfig
@@ -158,10 +141,10 @@ kubectl get connectors
 kubectl get clients
 ```
 
-All resources should show a status indicating they have been processed by the operator. If any resource reports an error, inspect the operator logs:
+All resources should show a `Ready` phase. If any resource reports an error, inspect the operator logs:
 
 ```bash
-kubectl logs -l control-plane=controller-manager -n dex-config-operator-system
+kubectl logs -l app.kubernetes.io/name=dex-config-operator
 ```
 
 ## Next steps
