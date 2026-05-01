@@ -20,5 +20,10 @@
     "version": "renovate-main-npm-minimatch-vulnerability",
     "title": "renovate-main-npm-minimatch-vulnerability",
     "aliases": []
+  },
+  {
+    "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
+    "title": "renovate-main-nginxinc-nginx-unprivileged-1.x",
+    "aliases": []
   }
 ]
