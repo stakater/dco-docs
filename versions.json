@@ -30,5 +30,10 @@
     "version": "renovate-main-nginxinc-nginx-unprivileged-1.x",
     "title": "renovate-main-nginxinc-nginx-unprivileged-1.x",
     "aliases": []
+  },
+  {
+    "version": "renovate-main-docker-login-action-4.x",
+    "title": "renovate-main-docker-login-action-4.x",
+    "aliases": []
   }
 ]
