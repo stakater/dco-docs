@@ -45,5 +45,10 @@
     "version": "renovate-main-docker-login-action-4.x",
     "title": "renovate-main-docker-login-action-4.x",
     "aliases": []
+  },
+  {
+    "version": "feat-docs-target",
+    "title": "feat-docs-target",
+    "aliases": []
   }
 ]
