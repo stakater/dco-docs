@@ -37,9 +37,7 @@
   {
     "version": "renovate-main-dotenv-18.x",
     "title": "renovate-main-dotenv-18.x",
-    "aliases": [
-      "latest"
-    ]
+    "aliases": []
   },
   {
     "version": "renovate-main-docker-login-action-4.x",
@@ -49,6 +47,8 @@
   {
     "version": "feat-docs-target",
     "title": "feat-docs-target",
-    "aliases": []
+    "aliases": [
+      "latest"
+    ]
   }
 ]
