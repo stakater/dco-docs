@@ -43,12 +43,5 @@
     "version": "renovate-main-docker-login-action-4.x",
     "title": "renovate-main-docker-login-action-4.x",
     "aliases": []
-  },
-  {
-    "version": "backport-serialize-gh-pages-deploys-0.1",
-    "title": "backport-serialize-gh-pages-deploys-0.1",
-    "aliases": [
-      "latest"
-    ]
   }
 ]
